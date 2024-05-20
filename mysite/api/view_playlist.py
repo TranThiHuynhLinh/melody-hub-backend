@@ -3,12 +3,13 @@ from rest_framework import generics
 from .models import Artist
 from .serializers import ArtistSerializer
 import firebase_admin
-from firebase_admin import credentials, firestore
+from firebase_admin import credentials, firestore, storage, auth
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework import status
 import random
 import jwt
+import datetime
 
 json_content = {
     "type": "service_account",
@@ -35,6 +36,7 @@ if not firebase_admin._apps:
     )
 
 db = firestore.client()
+# bucket = storage.bucket()
 
 
 class create_my_playlist(APIView):
@@ -65,6 +67,14 @@ class create_my_playlist(APIView):
             return JsonResponse(
                 {"message": "successfully"}, status=status.HTTP_201_CREATED
             )
+        except jwt.ExpiredSignatureError:
+            return JsonResponse(
+                {"message": "Token has expired"}, status=status.HTTP_400_BAD_REQUEST
+            )
+        except jwt.InvalidTokenError:
+            return JsonResponse(
+                {"message": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST
+            )
         except Exception as e:
             return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -88,6 +98,14 @@ class remove_my_playlist(APIView):
             playlist.delete()
             return JsonResponse(
                 {"message": "successfully"}, status=status.HTTP_201_CREATED
+            )
+        except jwt.ExpiredSignatureError:
+            return JsonResponse(
+                {"message": "Token has expired"}, status=status.HTTP_400_BAD_REQUEST
+            )
+        except jwt.InvalidTokenError:
+            return JsonResponse(
+                {"message": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST
             )
         except Exception as e:
             return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -129,6 +147,25 @@ class get_my_playlist(APIView):
 class get_tracks_by_playlist_id(APIView):
     def get(self, request):
         try:
+            auth_header = request.headers.get("Authorization")
+            if not auth_header:
+                return JsonResponse(
+                    {"message": "Authorization header is missing"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+
+            id_token = auth_header.split(" ")[1]
+            try:
+                decoded_token = jwt.decode(id_token, "SECRET_KEY", algorithms=["HS256"])
+            except jwt.ExpiredSignatureError:
+                return JsonResponse(
+                    {"message": "Token has expired"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+            except jwt.InvalidTokenError:
+                return JsonResponse(
+                    {"message": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED
+                )
             playlist_id = request.query_params.get("playlist_id")
             if not playlist_id:
                 return JsonResponse(
@@ -185,6 +222,25 @@ class get_tracks_by_playlist_id(APIView):
 class get_tracks_recommend_by_playlist_id(APIView):
     def get(self, request):
         try:
+            auth_header = request.headers.get("Authorization")
+            if not auth_header:
+                return JsonResponse(
+                    {"message": "Authorization header is missing"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+
+            id_token = auth_header.split(" ")[1]
+            try:
+                decoded_token = jwt.decode(id_token, "SECRET_KEY", algorithms=["HS256"])
+            except jwt.ExpiredSignatureError:
+                return JsonResponse(
+                    {"message": "Token has expired"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+            except jwt.InvalidTokenError:
+                return JsonResponse(
+                    {"message": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED
+                )
             playlist_id = request.query_params.get("playlist_id")
             if not playlist_id:
                 return JsonResponse(
@@ -241,6 +297,25 @@ class get_tracks_recommend_by_playlist_id(APIView):
 class add_track_to_my_playlist(APIView):
     def post(self, request):
         try:
+            auth_header = request.headers.get("Authorization")
+            if not auth_header:
+                return JsonResponse(
+                    {"message": "Authorization header is missing"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+
+            id_token = auth_header.split(" ")[1]
+            try:
+                decoded_token = jwt.decode(id_token, "SECRET_KEY", algorithms=["HS256"])
+            except jwt.ExpiredSignatureError:
+                return JsonResponse(
+                    {"message": "Token has expired"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+            except jwt.InvalidTokenError:
+                return JsonResponse(
+                    {"message": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED
+                )
             playlist_id = request.data.get("playlist_id")
             track_id = request.data.get("track_id")
 
@@ -284,6 +359,25 @@ class add_track_to_my_playlist(APIView):
 class remove_track_from_my_playlist(APIView):
     def post(self, request):
         try:
+            auth_header = request.headers.get("Authorization")
+            if not auth_header:
+                return JsonResponse(
+                    {"message": "Authorization header is missing"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+
+            id_token = auth_header.split(" ")[1]
+            try:
+                decoded_token = jwt.decode(id_token, "SECRET_KEY", algorithms=["HS256"])
+            except jwt.ExpiredSignatureError:
+                return JsonResponse(
+                    {"message": "Token has expired"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+            except jwt.InvalidTokenError:
+                return JsonResponse(
+                    {"message": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED
+                )
             playlist_id = request.data.get("playlist_id")
             track_id = request.data.get("track_id")
 

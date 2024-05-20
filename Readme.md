@@ -82,9 +82,11 @@
     5.3 Get tracks by playlist_id
         Method: GET
         Endpoint: https://39xhlpq0-8000.asse.devtunnels.ms/playlist/get-tracks-by-playlist-id?playlist_id=Skpez84xuwiWavLXXqPR
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ1p3aUZRblZEVU53cjZmakxoUnV0ekZwSDc3MyIsInVzZXJuYW1lIjoiTGluaGxpbmgiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjgxMjcyOX0.3HOlu6uAVe1YkeNoua1wQ2zfX0Isz3LM3Fz-QfkIbRI
     5.4 Add track to playlist
         Method: POST
         Endpoint: https://39xhlpq0-8000.asse.devtunnels.ms/playlist/add-track-to-my-playlist
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ1p3aUZRblZEVU53cjZmakxoUnV0ekZwSDc3MyIsInVzZXJuYW1lIjoiTGluaGxpbmgiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjgxMjcyOX0.3HOlu6uAVe1YkeNoua1wQ2zfX0Isz3LM3Fz-QfkIbRI
         {
             "track_id": "oAlB0uGlPWO3EsBB9yqu",
             "playlist_id": "hZTSUEYPgBLvZOWyV2sZ"
@@ -95,6 +97,7 @@
     5.5 Remove track from playlist
         Method: POST
         Endpont: https://39xhlpq0-8000.asse.devtunnels.ms/playlist/remove-track-from-my-playlist
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ1p3aUZRblZEVU53cjZmakxoUnV0ekZwSDc3MyIsInVzZXJuYW1lIjoiTGluaGxpbmgiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjgxMjcyOX0.3HOlu6uAVe1YkeNoua1wQ2zfX0Isz3LM3Fz-QfkIbRI
         {
             "track_id": "oAlB0uGlPWO3EsBB9yqu",
             "playlist_id": "hZTSUEYPgBLvZOWyV2sZ"
@@ -106,3 +109,4 @@
     5.6 Get track_recommended_by_playlist_id
         Medtod: GET
         Endpoint: https://39xhlpq0-8000.asse.devtunnels.ms/playlist/get-tracks-recommend-by-playlist-id?playlist_id=Skpez84xuwiWavLXXqPR
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ1p3aUZRblZEVU53cjZmakxoUnV0ekZwSDc3MyIsInVzZXJuYW1lIjoiTGluaGxpbmgiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjgxMjcyOX0.3HOlu6uAVe1YkeNoua1wQ2zfX0Isz3LM3Fz-QfkIbRI
