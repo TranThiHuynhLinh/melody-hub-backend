@@ -1,11 +1,4 @@
-# baseUrl: https://39xhlpq0-8000.asse.devtunnels.ms
-# Category:
-## 1. Artist
-## 2. Genres
-## 3. Tracks
-## 4. Auth
-## 5. Playlists
-
+## baseUrl: https://39xhlpq0-8000.asse.devtunnels.ms
 
 ## 1. Artist
     1.1 Lấy toàn bộ Artist
