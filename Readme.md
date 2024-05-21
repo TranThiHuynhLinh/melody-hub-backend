@@ -112,3 +112,11 @@
         Medtod: GET
         Endpoint: {baseUrl}/playlist/get-tracks-recommend-by-playlist-id?playlist_id=Skpez84xuwiWavLXXqPR
         Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ1p3aUZRblZEVU53cjZmakxoUnV0ekZwSDc3MyIsInVzZXJuYW1lIjoiTGluaGxpbmgiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjgxMjcyOX0.3HOlu6uAVe1YkeNoua1wQ2zfX0Isz3LM3Fz-QfkIbRI
+    5.7 Change playlist_name
+        Medtod: POST
+        Endpoint: {baseUrl}/playlist/change-playlist-name
+        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ1p3aUZRblZEVU53cjZmakxoUnV0ekZwSDc3MyIsInVzZXJuYW1lIjoiTGluaGxpbmgiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjgxMjcyOX0.3HOlu6uAVe1YkeNoua1wQ2zfX0Isz3LM3Fz-QfkIbRI
+        {
+            "playlist_name": ""
+            "playlist_id": ""
+        }
