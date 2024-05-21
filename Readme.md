@@ -129,3 +129,31 @@
             "playlist_name": ""
             "playlist_id": ""
         }
+## 6. Account
+    6.1 change role
+        Method: Post
+        Endpoint: {baseUrl}/account/change-account-role
+        Authorization: Bearer xxx
+        {
+            "new_role": ""
+        }
+    6.2 get information
+        Method: Post
+        Endpoint: {baseUrl}/account/get-account-information
+        Authorization: Bearer xxx
+        
+        result:
+            infor = {
+                "user_id": user_id,
+                "email": decoded_token["email"],
+                "role": decoded_token["role"],
+                "fullname": account_info["fullname"],
+                "avatar_image": account_info["avatar_image"],
+            }
+    6.3 change fullname
+        Method: Post
+        Endpoint: {baseUrl}account/update-fullname
+        Authorization: Bearer xxx
+        {
+            "new_fullname": ""
+        }
