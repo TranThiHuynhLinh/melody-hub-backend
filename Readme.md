@@ -152,8 +152,16 @@
             }
     6.3 change fullname
         Method: Post
-        Endpoint: {baseUrl}account/update-fullname
+        Endpoint: {baseUrl}/account/update-fullname
         Authorization: Bearer xxx
         {
             "new_fullname": ""
+        }
+    6.4 change password
+        Method: Post
+        Endpoint: {baseUrl}/account/update-password
+        Authorization: Bearer xxx
+        {
+            "new_password": "123456",
+            "old_password": "Pass1234!"
         }
