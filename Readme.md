@@ -36,6 +36,9 @@
     3.6 Lấy track theo id
         Endpoint: {baseUrl}/track/get-track-by-id?track_id=13Nmlsgxnumg3n2mljMh
         method: GET
+    3.7 Lấy gợi ý tracks
+        Endpoint: {baseUrl}/track/get-recommended-tracks?track_id=13Nmlsgxnumg3n2mljMh
+        method: GET
 ## 4. Auth
     4.1 Đăng ký
         POST {baseUrl}/auth/signup 
