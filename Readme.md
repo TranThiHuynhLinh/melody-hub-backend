@@ -13,6 +13,9 @@
     1.4 Lấy popular artists
         Endpoint: {baseUrl}/artist/get-popular-artists?limit=3
         Method: GET
+    1.5 Lấy artist theo id
+        Endpoint: {baseUrl}/artist/get-artist-by-id
+        Method: GET
 ## 2. Genres
     2.1 Lấy toàn bộ Genres
         Endpoint: {baseUrl}/genre/get-all-genres
