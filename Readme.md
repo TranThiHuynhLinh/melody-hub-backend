@@ -33,6 +33,9 @@
     3.5 Lấy shuffled-tracks
         Endpoint: {baseUrl}/track/get-shuffled-tracks?limit=5
         method: GET
+    3.6 Lấy track theo id
+        Endpoint: {baseUrl}/track/get-track-by-id?track_id=13Nmlsgxnumg3n2mljMh
+        method: GET
 ## 4. Auth
     4.1 Đăng ký
         POST {baseUrl}/auth/signup 
