@@ -202,3 +202,27 @@
         {
             "track_id": ""
         }
+    7.4 update-my-track-name
+        Method: Post
+        Endpoint: {baseUrl}/creator/update-my-track-name
+        Authorization: Bearer xxx
+        {
+            "track_id": "",
+            "track_name": ""
+        }
+    7.5 update-track-artist
+        Method: Post
+        Endpoint: {baseUrl}/creator/update-track-artist
+        Authorization: Bearer xxx
+        {
+            "track_id": "",
+            "artist_id": ""
+        }
+    7.6 update_track_genres
+        Method: Post
+        Endpoint: {baseUrl}/creator/update-track-genre
+        Authorization: Bearer xxx
+        {
+            "track_id": "",
+            "genres_id": ""
+        }
