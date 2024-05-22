@@ -178,9 +178,9 @@
         key: avatar_image
         FILE
 ## 7. Creator
-        7.1 create_my_track
+            7.1 create_my_track
         Method: POST
-        Endpoint: {baseUrl}account/create-my-track
+        Endpoint: {baseUrl}/creator/create-my-track
         Authorization: Bearer xxx
         track_file: .mp3
         track_image: .jpg
@@ -191,3 +191,7 @@
             "release_year": 2020,
             "duration": 220
         }
+    7.2 get_all_my_created_tracks
+        Method: GET
+        Endpoint: {baseUrl}/creator/get-all-my-created-tracks
+        Authorization: Bearer xxx
