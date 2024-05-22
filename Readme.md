@@ -177,3 +177,17 @@
         Authorization: Bearer xxx
         key: avatar_image
         FILE
+## 7. Creator
+        7.1 create_my_track
+        Method: POST
+        Endpoint: {baseUrl}account/create-my-track
+        Authorization: Bearer xxx
+        track_file: .mp3
+        track_image: .jpg
+        {
+            "track_name": "Break My Heart",
+            "artist_id": "19m26qd5787MiNlnxUHC",
+            "genres_id": "509BJCipPqWFbw3Ooa7n",
+            "release_year": 2020,
+            "duration": 220
+        }
