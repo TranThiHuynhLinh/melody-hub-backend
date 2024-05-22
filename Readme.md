@@ -75,6 +75,9 @@
             {"message": "Token expired"}
             {"message": "Invalid token"}
             {"message": "Authorization header missing"}
+    4.5 Is-creator
+        GET {baseUrl}/auth/is-creator
+        Authorization: Bearer xxx
 ## 5. Playlists
     5.1 Create my playlist
         POST {baseUrl}/playlist/create-my-playlist
