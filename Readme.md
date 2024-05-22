@@ -226,3 +226,12 @@
             "track_id": "",
             "genres_id": ""
         }
+    7.7 update track image
+        Method: Post
+        Endpoint: {baseUrl}/creator/update-track-image
+        Authorization: Bearer xxx
+        FILE
+        key: track_image
+        {
+            "track_id": "",
+        }
