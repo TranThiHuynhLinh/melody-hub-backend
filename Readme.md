@@ -178,7 +178,7 @@
         key: avatar_image
         FILE
 ## 7. Creator
-            7.1 create_my_track
+    7.1 create_my_track
         Method: POST
         Endpoint: {baseUrl}/creator/create-my-track
         Authorization: Bearer xxx
