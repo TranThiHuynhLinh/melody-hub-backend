@@ -165,3 +165,9 @@
             "new_password": "123456",
             "old_password": "Pass1234!"
         }
+    6.4 Change avatar
+        Method: Post
+        Endpoint: {baseUrl}/account/update-avatar-image
+        Authorization: Bearer xxx
+        key: avatar_image
+        FILE
