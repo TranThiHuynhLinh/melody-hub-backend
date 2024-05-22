@@ -195,3 +195,10 @@
         Method: GET
         Endpoint: {baseUrl}/creator/get-all-my-created-tracks
         Authorization: Bearer xxx
+    7.3 remove_my_created_track
+        Method: Post
+        Endpoint: {baseUrl}/creator/remove-my-track
+        Authorization: Bearer xxx
+        {
+            "track_id": ""
+        }
